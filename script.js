@@ -1,0 +1,21 @@
+const toggle = document.getElementById("menu-toggle");
+const menu = document.getElementById("menu");
+const overlay = document.getElementById("overlay");
+
+toggle.addEventListener("click", () => {
+    menu.classList.toggle("active");
+    overlay.classList.toggle("active");
+});
+
+overlay.addEventListener("click", () => {
+    menu.classList.remove("active");
+    overlay.classList.remove("active");
+});
+
+// Fechar menu ao clicar em um link
+document.querySelectorAll(".menu a").forEach(link => {
+    link.addEventListener("click", () => {
+        menu.classList.remove("active");
+        overlay.classList.remove("active");
+    });
+});
